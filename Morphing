@@ -1,0 +1,16 @@
+clc;
+clear all;
+iter = 30;
+A = im2double(imread('S__25927688.jpg'));
+B = im2double(imread('S__25927690.jpg'));
+A = imresize(A, [512 512]);
+B = imresize(B, [512 512]);
+C = B - A;
+C = C./iter;
+
+for i =1:iter
+A = A+C;
+imshow(A);
+pause(0.1)
+
+end
